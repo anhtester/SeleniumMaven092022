@@ -15,6 +15,7 @@ public class BaseTest {
 
     //Khởi tạo browser
     public static void createDriver(){
+        System.setProperty("webdriver.http.factory", "jdk-http-client");
         WebDriverManager.chromedriver().setup();
         driver = new ChromeDriver();
         driver.manage().window().maximize();
