@@ -8,7 +8,7 @@ import org.openqa.selenium.Keys;
 public class ClientCRM extends BaseTest {
 
     //Login to CRM system
-    public static void signinCRM() {
+    public static void signInCRM() {
         driver.get("https://rise.fairsketch.com/signin");
         driver.findElement(By.xpath("//input[@id='email']")).clear();
         driver.findElement(By.xpath("//input[@id='password']")).clear();
@@ -35,7 +35,7 @@ public class ClientCRM extends BaseTest {
         driver.findElement(By.xpath("//div[@id='s2id_created_by']")).click();
         sleep(1);
         driver.findElement(By.xpath("//div[@id='select2-drop']//input")).sendKeys("Sara Ann", Keys.ENTER);
-        driver.findElement(By.id("address")).sendKeys("DHĐT");
+        driver.findElement(By.id("address")).sendKeys("DHDT");
         driver.findElement(By.id("city")).sendKeys("Cao Lãnh");
         driver.findElement(By.id("state")).sendKeys("Đồng Tháp");
         driver.findElement(By.id("zip")).sendKeys("81000");
@@ -83,7 +83,7 @@ public class ClientCRM extends BaseTest {
     public static void main(String[] args) {
         createDriver();
 
-        signinCRM();
+        signInCRM();
         openClientPage();
         enterDataAddClient("Anh Tester");
         checkClientAfterAdded("Anh Tester");

@@ -11,9 +11,10 @@ public class LoginECommerce {
 
     public static void main(String[] args) throws InterruptedException {
 
+        System.setProperty("webdriver.http.factory", "jdk-http-client");
         //Khởi tạo browser với Chrome
         WebDriver driver;
-        WebDriverManager.chromedriver().setup();
+        //WebDriverManager.chromedriver().setup();
         driver = new ChromeDriver();
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));

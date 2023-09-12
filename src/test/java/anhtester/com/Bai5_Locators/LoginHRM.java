@@ -10,20 +10,21 @@ import java.time.Duration;
 public class LoginHRM {
     public static void main(String[] args) throws InterruptedException {
 
+        System.setProperty("webdriver.http.factory", "jdk-http-client");
         //Khởi tạo browser với Chrome
         WebDriver driver;
-        WebDriverManager.chromedriver().setup();
+        //WebDriverManager.chromedriver().setup();
         driver = new ChromeDriver();
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 
         //Mở trang eCommerce
-        driver.get("https://app.hrsale.com/");
+        driver.get("https://hrm.anhtester.com/");
         Thread.sleep(1000);
 
-        driver.findElement(By.xpath("/html/body/div/div/div/div/div[2]/div/form/div[1]/div[1]/input")).sendKeys("frances.burns");
-        driver.findElement(By.xpath("/html/body/div/div/div/div/div[2]/div/form/div[1]/div[2]/input")).sendKeys("frances.burns");
-        driver.findElement(By.xpath("/html/body/div/div/div/div/div[2]/div/form/div[3]/div[1]/button")).click();
+        driver.findElement(By.xpath("/html/body/div/div/div/div/div[2]/div/form/div[1]/div[1]/input")).sendKeys("admin_example");
+        driver.findElement(By.xpath("/html/body/div/div/div/div/div[2]/div/form/div[1]/div[2]/input")).sendKeys("123456");
+        driver.findElement(By.xpath("/html[1]/body[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/form[1]/div[2]/button[1]")).click();
 
         Thread.sleep(6000);
         //Tắt browser
